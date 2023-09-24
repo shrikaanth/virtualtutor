@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .accordion {
+            background-color: #f9f9f9;
+            color: #333;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+            margin-bottom: 6px;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .panel.show {
+            display: block;
+        }
+
+        .explanation {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <center>
+              <h4>AI-powered Virtual Tutor: Create an AI tutor that can interact with
+            students, assess their knowledge, and provide personalized learning<br>
+            recommendations and explanations."<br>	J. Pranavi-20841A0578	<br> Y. Soujanya-20841A05B9	<br> K.Sai Sadvik-20841A05B1</h4>
+        </center>
+
+        <div class="accordion" data-explanation="This is the explanation for Algebra">
+            Mathematics
+        </div>
+        <div class="panel">
+            <p>Topics:</p>
+            <ul>
+                <li class="sub-topic" data-explanation="Algebra is a branch of mathematics that deals with symbols and the rules for manipulating those symbols to solve equations and analyze relationships between variables. It involves operations on numbers and letters, often representing quantities without specific values.">Algebra</li>
+                <li class="sub-topic" data-explanation="In mathematics and computer science, a graph is a collection of nodes (vertices) and edges that connect pairs of nodes. It's a way of representing relationships between different elements in a set. Graphs are widely used in various fields, including computer science, social networks, and transportation systems.">Graphs</li>
+                <li class="sub-topic" data-explanation="Constant Rule: d/dx (c) = 0, where c is a constant. 
+                Power Rule: d/dx (x^n) = n * x^(n-1), where n is a constant.
+                Constant Multiple Rule: d/dx (k * f(x)) = k * d/dx (f(x)), where k is a constant.
+                Sum/Difference Rule: d/dx (f(x) ± g(x)) = d/dx (f(x)) ± d/dx (g(x)).
+                Product Rule: d/dx (f(x) * g(x)) = f'(x) * g(x) + f(x) * g'(x).
+                Quotient Rule: d/dx (f(x) / g(x)) = [g(x) * f'(x) – f(x) * g'(x)] / [g(x)]^2.
+                Chain Rule: d/dx (f(g(x))) = f'(g(x)) * g'(x).">Formuals of Differentiation</li>
+                <li class="sub-topic" data-explanation="In mathematics and computer science, a graph is a collection of nodes (vertices) and edges that connect pairs of nodes. It's a way of representing relationships between different elements in a set. Graphs are widely used in various fields, including computer science, social networks, and transportation systems.">Formulas of Integrations</li>
+           
+           
+           
+            </ul>
+        </div>
+
+        <div class="accordion" data-explanation="This is the explanation for Chemistry">
+            Science
+        </div>
+        <div class="panel">
+            <p>Topics:</p>
+            <ul>
+                <li class="sub-topic" data-explanation="Chemistry is the scientific study of matter, its properties, composition, structure, behavior, and the changes it undergoes during chemical reactions. It is a central science that connects physical and biological sciences. Chemists study atoms, molecules, and compounds to understand their properties and behavior.">Chemistry</li>
+                <li class="sub-topic" data-explanation="Physics is the branch of science that deals with the fundamental principles governing the behavior of matter and energy in the universe. It covers a wide range of phenomena, from the behavior of subatomic particles to the motion of galaxies. Physics is fundamental to understanding the natural world.">Physics</li>
+                <li class="sub-topic" data-explanation="Biology is the scientific study of life and living organisms. It encompasses a wide range of disciplines, from molecular biology (studying the smallest units of life) to ecology (examining interactions between organisms and their environment). Biology helps us understand the diversity, structure, and functions of life on Earth.">Biology</li>
+               </ul>
+        </div>
+
+        <div class="chatbox">
+            <div class="chatbox__support">
+                <div class="chatbox__header">
+                    <div class="chatbox__image--header">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">Your Virtual Tutor</h4>
+                        <p class="chatbox__description--header">Hi. My name is Sam. Ask me any question</p>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <div></div>
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox__send--footer send__button">Send</button>
+                </div>
+            </div>
+            <div class="chatbox__button">
+                <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h2>Explanation</h2>
+            <p id="explanation-content"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const subTopics = document.querySelectorAll('.sub-topic');
+            const explanationContent = document.getElementById('explanation-content');
+
+            subTopics.forEach(subTopic => {
+                subTopic.addEventListener('click', function() {
+                    const explanation = this.dataset.explanation;
+
+                    // Update explanation content
+                    explanationContent.textContent = explanation;
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(accordion => {
+        accordion.addEventListener('click', function() {
+            this.classList.toggle('active');
+
+            const panel = this.nextElementSibling;
+            if (panel.style.display === 'block') {
+                panel.style.display = 'none';
+            } else {
+                panel.style.display = 'block';
+            }
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const subTopics = document.querySelectorAll('.sub-topic');
+    const explanationContent = document.getElementById('explanation-content');
+
+    subTopics.forEach(subTopic => {
+        subTopic.addEventListener('click', function() {
+            const explanation = this.dataset.explanation;
+
+            // Update explanation content
+            explanationContent.textContent = explanation;
+        });
+    });
+});
+
+</script>
+
+</html>

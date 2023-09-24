@@ -1,0 +1,139 @@
+{
+  "intents":
+  [
+    {
+      "tag": "science",
+      "patterns": [
+        "What is Chemical Formula of CH4"
+      ],
+      "responses": [
+        "CH4 is the chemical formula for methane."
+      ]
+    },
+    {
+      "tag": "math1",
+      "patterns": [
+        "What is the value of Pi"
+      ],
+      "responses": [
+        "Pi is approximately 3.14159."
+      ]
+    },
+    {
+      "tag": "science1",
+      "patterns": [
+        "What is the atomic number of Carbon"
+      ],
+      "responses": [
+        "The atomic number of Carbon is 6."
+      ]
+    },
+    {
+      "tag": "science2",
+      "patterns": [
+        "Who discovered the structure of DNA"
+      ],
+      "responses": [
+        "The structure of DNA was discovered by James Watson and Francis Crick."
+      ]
+    },
+    {
+      "tag": "math2",
+      "patterns": [
+        "Solve for x in the equation 2x + 5 = 15"
+      ],
+      "responses": [
+        "The solution for x in the equation 2x + 5 = 15 is x = 5."
+      ]
+    },
+    {
+      "tag": "history1",
+      "patterns": [
+        "Who was the first President of the United States"
+      ],
+      "responses": [
+        "The first President of the United States was George Washington."
+      ]
+    },
+    {
+      "tag": "history2",
+      "patterns": [
+        "When was the Declaration of Independence signed"
+      ],
+      "responses": [
+        "The Declaration of Independence was signed on July 4, 1776."
+      ]
+    },{
+      "tag": "science3",
+      "patterns": [
+        "What is the chemical symbol for water?"
+      ],
+      "responses": [
+        "The chemical symbol for water is H2O."
+      ]
+    },
+    {
+      "tag": "math3",
+      "patterns": [
+        "What is the Pythagorean theorem?"
+      ],
+      "responses": [
+        "The Pythagorean theorem states that in a right-angled triangle, the square of the length of the hypotenuse (c) is equal to the sum of the squares of the other two sides (a and b), which can be written as a² + b² = c²."
+      ]
+    },
+    {
+      "tag": "science4",
+      "patterns": [
+        "What is photosynthesis?"
+      ],
+      "responses": [
+        "Photosynthesis is the process by which green plants, algae, and some bacteria convert carbon dioxide and water into glucose and oxygen, using energy from sunlight."
+      ]
+    },
+    {
+      "tag": "math4",
+      "patterns": [
+        "What is the value of e in mathematics?"
+      ],
+      "responses": [
+        "The value of 'e' in mathematics is approximately 2.71828. It is the base of the natural logarithm."
+      ]
+    },
+    {
+      "tag": "history3",
+      "patterns": [
+        "Who wrote the Gettysburg Address?"
+      ],
+      "responses": [
+        "The Gettysburg Address was written by Abraham Lincoln."
+      ]
+    },
+    {
+      "tag": "history4",
+      "patterns": [
+        "What year did World War II end?"
+      ],
+      "responses": [
+        "World War II ended in 1945."
+      ]
+    },    {
+      "tag": "math5",
+      "patterns": [
+        "2+2"
+      ],
+      "responses": [
+        "4"
+      ]
+    },  {
+      "tag": "computer",
+      "patterns": [
+        "Father of Computer"
+      ],
+      "responses": [
+        "Charles Babbage"
+      ]
+    }
+ 
+  ]
+  
+}
